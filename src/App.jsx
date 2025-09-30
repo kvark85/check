@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="header">
+        <button>Sign in with google</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="main-content">
+        <div className="content">
+          <h1>Check me</h1>
+          <div className="input-row">
+            <div className="styled-input ">
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" placeholder="Name"/>
+            </div>
+            <div className="styled-input ">
+              <label htmlFor="surename">Surname</label>
+              <input type="text" id="surname" placeholder="Surname"/>
+            </div>
+          </div>
+          <div className="input-row">
+            <div className="styled-input">
+              <label htmlFor="code">Code</label>
+              <input type="text" id="code" placeholder="Code"/>
+            </div>
+          </div>
+          <button>🔍️ Find</button>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
