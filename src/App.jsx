@@ -1,4 +1,6 @@
 import './App.css'
+import {MainInput} from './components/MainInput'
+import {InputRow} from './components/InputRow'
 
 function App() {
   return (
@@ -9,22 +11,13 @@ function App() {
       <div className="main-content">
         <div className="content">
           <h1>Check me</h1>
-          <div className="input-row">
-            <div className="styled-input ">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" placeholder="Name"/>
-            </div>
-            <div className="styled-input ">
-              <label htmlFor="surename">Surname</label>
-              <input type="text" id="surname" placeholder="Surname"/>
-            </div>
-          </div>
-          <div className="input-row">
-            <div className="styled-input">
-              <label htmlFor="code">Code</label>
-              <input type="text" id="code" placeholder="Code"/>
-            </div>
-          </div>
+          <InputRow>
+            <MainInput id="name" label="Name" />
+            <MainInput id="surname" label="Surname" />
+          </InputRow>
+          <InputRow>
+            <MainInput id="code" label="Code" />
+          </InputRow>
           <button>🔍️ Find</button>
         </div>
       </div>
