@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import RootStoreImpl from './RootStore/RootStoreImpl';
+import RootStoreContext from "./RootStore/RootStoreContext";
+
+const rootContext = new RootStoreImpl()
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RootStoreContext.Provider value={rootContext}>
+      <App />
+    </RootStoreContext.Provider>
   </React.StrictMode>
 );
 

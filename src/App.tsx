@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {observer} from 'mobx-react-lite';
+import useRootContext from "./RootStore/hooks/useRootContext";
 
-function App() {
+const App = observer(() => {
+  const {testCounter} = useRootContext()
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +22,11 @@ function App() {
         >
           Learn React
         </a>
+        {testCounter.counter}
+        <button onClick={testCounter.increment}>text</button>
       </header>
     </div>
   );
-}
+})
 
 export default App;
