@@ -1,31 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {observer} from 'mobx-react-lite';
 import useRootContext from "./RootStore/hooks/useRootContext";
+import {InputRow} from "./components/InputRow";
+import {MainInput} from "./components/MainInput";
 
 const App = observer(() => {
   const {testCounter} = useRootContext()
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {testCounter.counter}
-        <button onClick={testCounter.increment}>text</button>
-      </header>
-    </div>
+    <>
+      <div className="header">
+        <button onClick={testCounter.increment}>Sign in with google ({testCounter.counter})</button>
+      </div>
+      <div className="main-content">
+        <div className="content">
+          <h1>Check me</h1>
+          <InputRow>
+            <MainInput id="name" label="Name" />
+            <MainInput id="surname" label="Surname" />
+          </InputRow>
+          <InputRow>
+            <MainInput id="code" label="Code" />
+          </InputRow>
+          <button>🔍️ Find</button>
+        </div>
+      </div>
+    </>
   );
 })
 

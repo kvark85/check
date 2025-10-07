@@ -17,16 +17,7 @@ class AxiosWrapperImpl implements AxiosWrapper {
       readonly secureStorage: SecureStorage;
     },
   ) {
-    console.log('AAAAAAAAA')
-    console.log('AAAAAAAAA')
-    console.log('AAAAAAAAA')
-    console.log('AAAAAAAAA')
-
-    console.log('REACT_APP_PUBLIC_API_URL =', process.env.REACT_APP_PUBLIC_API_URL)
-
-
     this._api = axios.create({
-      // @ts-ignore
       baseURL: process.env.REACT_APP_PUBLIC_API_URL,
       headers: this.defaultHeaders,
     });
@@ -59,7 +50,6 @@ class AxiosWrapperImpl implements AxiosWrapper {
           if (tokens?.refreshToken) {
             try {
               const { data } = await axios.post(
-                // @ts-ignore
                 `${process.env.REACT_APP_PUBLIC_API_URL}/auth/refresh`,
                 { refreshToken: tokens.refreshToken },
                 { headers: { 'Content-Type': 'application/json' } },

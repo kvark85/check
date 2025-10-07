@@ -1,0 +1,16 @@
+.styled-input {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.styled-input-label {
+  text-align: left;
+}
+
+.styled-input-input {
+  padding: 4px;
+}
+
+
