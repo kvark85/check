@@ -4,10 +4,10 @@ import {
   observable,
   computed,
   runInAction,
-} from 'mobx';
-import Users from './Users';
-import { UserType } from '../../commonTypes';
-import { AxiosWrapper } from '../AxiosWrapper';
+} from "mobx";
+import Users from "./Users";
+import { UserType } from "../commonTypes";
+import { AxiosWrapper } from "../AxiosWrapper";
 
 class UsersImpl implements Users {
   @observable private _users: UserType[] = [];
@@ -28,7 +28,7 @@ class UsersImpl implements Users {
   @action.bound
   findUsers = async (searchString: string) => {
     const response =
-      await this._root.axiosWrapper.get<UserType[]>('/user/find');
+      await this._root.axiosWrapper.get<UserType[]>("/user/find");
 
     runInAction(() => {
       this._users = response.data;

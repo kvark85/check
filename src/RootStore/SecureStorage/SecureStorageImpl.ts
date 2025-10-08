@@ -1,6 +1,6 @@
-import { TokensType } from '../../commonTypes';
-import { TOKENS_SECURITY_STORAGE_KEY } from './SecureStorage';
-import type { SecureStorage } from './SecureStorage';
+import { TokensType } from "../commonTypes";
+import { TOKENS_SECURITY_STORAGE_KEY } from "./SecureStorage";
+import type { SecureStorage } from "./SecureStorage";
 
 class SecureStorageImpl implements SecureStorage {
   saveTokens = (tokens: TokensType) => {

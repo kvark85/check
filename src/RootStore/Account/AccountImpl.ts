@@ -4,10 +4,10 @@ import {
   observable,
   computed,
   runInAction,
-} from 'mobx';
-import Account from './Account';
-import { UserType } from '../../commonTypes';
-import { AxiosWrapper } from '../AxiosWrapper';
+} from "mobx";
+import Account from "./Account";
+import { UserType } from "../commonTypes";
+import { AxiosWrapper } from "../AxiosWrapper";
 
 class AccountImpl implements Account {
   @observable private _account: UserType | undefined;
@@ -27,11 +27,16 @@ class AccountImpl implements Account {
 
   @action.bound
   fetchAccount = async () => {
-    const response = await this._root.axiosWrapper.get<UserType>('/user');
+    const response = await this._root.axiosWrapper.get<UserType>("/user");
 
     runInAction(() => {
       this._account = response.data;
     });
+  };
+
+  @action.bound
+  reset = async () => {
+    this._account = undefined;
   };
 }
 

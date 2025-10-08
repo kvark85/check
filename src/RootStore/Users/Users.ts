@@ -1,4 +1,4 @@
-import { UserType } from '../../commonTypes';
+import { UserType } from "../commonTypes";
 
 interface Users {
   users: UserType[];

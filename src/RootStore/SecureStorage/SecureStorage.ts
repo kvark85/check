@@ -1,6 +1,6 @@
-import { TokensType } from '../../commonTypes';
+import { TokensType } from "../commonTypes";
 
-export const TOKENS_SECURITY_STORAGE_KEY = 'tokensSecurityStorageKey';
+export const TOKENS_SECURITY_STORAGE_KEY = "tokensSecurityStorageKey";
 
 export interface SecureStorage {
   saveTokens(tokens: TokensType): void;
